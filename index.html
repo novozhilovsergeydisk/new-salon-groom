@@ -920,35 +920,169 @@ var elementorDevToolsConfig = {};
 <script type="text/javascript" src="js/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
 
 <script type="text/javascript" src="js/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
-<script type="text/javascript" id="wp-i18n-js-after">
 
-/* <![CDATA[ */
-wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
-/* ]]> */
-</script>
-<script type="text/javascript" id="elementor-common-js-before">
-/* <![CDATA[ */
-// var elementorCommonConfig = {};
-/* ]]> */
-</script>
-
-<!-- <script type="text/javascript" src="js/common.min.js?ver=3.26.4" id="elementor-common-js"></script> -->
-
-<script type="text/javascript" id="elementor-app-loader-js-before">
-/* <![CDATA[ */
-// var elementorAppConfig = {"menu_url":"https:\/\/top-tomcat.10web.me\/wp-admin\/admin.php?page=elementor-app&ver=3.26.4#site-editor\/promotion","assets_url":"https:\/\/top-tomcat.10web.me\/wp-content\/plugins\/elementor\/assets\/","pages_url":"https:\/\/top-tomcat.10web.me\/wp-admin\/edit.php?post_type=page","return_url":"https:\/\/top-tomcat.10web.me\/wp-admin\/","hasPro":false,"admin_url":"https:\/\/top-tomcat.10web.me\/wp-admin\/","login_url":"https:\/\/top-tomcat.10web.me\/wp-login.php","base_url":"https:\/\/top-tomcat.10web.me\/wp-admin\/admin.php?page=elementor-app&ver=3.26.4","promotion":{"upgrade_url":"https:\/\/go.elementor.com\/go-pro-theme-builder\/"},"site-editor":[],"import-export":[],"kit-library":[],"onboarding":[]};
-/* ]]> */
-</script>
 <script type="text/javascript" src="js/app-loader.min.js?ver=3.26.4" id="elementor-app-loader-js"></script>
+
 <script type="text/javascript" src="js/v4-shims.min.js?ver=3.26.4" id="font-awesome-4-shim-js"></script>
+
 <script type="text/javascript" src="js/webpack.runtime.min.js?ver=3.26.4" id="elementor-webpack-runtime-js"></script>
+
 <script type="text/javascript" src="js/frontend-modules.min.js?ver=3.26.4" id="elementor-frontend-modules-js"></script>
+
 <script type="text/javascript" id="elementor-frontend-js-before">
 /* <![CDATA[ */
-var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":false},"version":"3.26.4","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"container":true,"e_swiper_latest":true,"e_nested_atomic_repeaters":true,"e_onboarding":true,"e_css_smooth_scroll":true,"home_screen":true,"nested-elements":true,"editor_v2":true,"link-in-bio":true,"floating-buttons":true,"launchpad-checklist":true,"form-submissions":true,"fast_editing_tools":true,"sections_generation":true,"co_pilot":true},"urls":{"assets":"https:\/\/top-tomcat.10web.me\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/top-tomcat.10web.me\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/top-tomcat.10web.me\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"07b3167d25"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","body_background_background":"classic"},"post":{"id":132,"title":"Karina%20Co.%20Dog%20Grooming","excerpt":"","featuredImage":false},"user":{"roles":["administrator"]}};
+var elementorFrontendConfig = 
+{
+   "environmentMode":{
+      "edit":false,
+      "wpPreview":false,
+      "isScriptDebug":false
+   },
+   "i18n":{
+      "shareOnFacebook":"Share on Facebook",
+      "shareOnTwitter":"Share on Twitter",
+      "pinIt":"Pin it",
+      "download":"Download",
+      "downloadImage":"Download image",
+      "fullscreen":"Fullscreen",
+      "zoom":"Zoom",
+      "share":"Share",
+      "playVideo":"Play Video",
+      "previous":"Previous",
+      "next":"Next",
+      "close":"Close",
+      "a11yCarouselPrevSlideMessage":"Previous slide",
+      "a11yCarouselNextSlideMessage":"Next slide",
+      "a11yCarouselFirstSlideMessage":"This is the first slide",
+      "a11yCarouselLastSlideMessage":"This is the last slide",
+      "a11yCarouselPaginationBulletMessage":"Go to slide"
+   },
+   "is_rtl":false,
+   "breakpoints":{
+      "xs":0,
+      "sm":480,
+      "md":768,
+      "lg":1025,
+      "xl":1440,
+      "xxl":1600
+   },
+   "responsive":{
+      "breakpoints":{
+         "mobile":{
+            "label":"Mobile Portrait",
+            "value":767,
+            "default_value":767,
+            "direction":"max",
+            "is_enabled":true
+         },
+         "mobile_extra":{
+            "label":"Mobile Landscape",
+            "value":880,
+            "default_value":880,
+            "direction":"max",
+            "is_enabled":false
+         },
+         "tablet":{
+            "label":"Tablet Portrait",
+            "value":1024,
+            "default_value":1024,
+            "direction":"max",
+            "is_enabled":true
+         },
+         "tablet_extra":{
+            "label":"Tablet Landscape",
+            "value":1200,
+            "default_value":1200,
+            "direction":"max",
+            "is_enabled":false
+         },
+         "laptop":{
+            "label":"Laptop",
+            "value":1366,
+            "default_value":1366,
+            "direction":"max",
+            "is_enabled":false
+         },
+         "widescreen":{
+            "label":"Widescreen",
+            "value":2400,
+            "default_value":2400,
+            "direction":"min",
+            "is_enabled":false
+         }
+      },
+      "hasCustomBreakpoints":false
+   },
+   "version":"3.26.4",
+   "is_static":false,
+   "experimentalFeatures":{
+      "e_font_icon_svg":true,
+      "container":true,
+      "e_swiper_latest":true,
+      "e_nested_atomic_repeaters":true,
+      "e_onboarding":true,
+      "e_css_smooth_scroll":true,
+      "home_screen":true,
+      "nested-elements":true,
+      "editor_v2":true,
+      "link-in-bio":true,
+      "floating-buttons":true,
+      "launchpad-checklist":true,
+      "form-submissions":true,
+      "fast_editing_tools":true,
+      "sections_generation":true,
+      "co_pilot":true
+   },
+   "urls":{
+	  "xxx":"https:\/\/top-tomcat.10web.me\/wp-content\/plugins\/elementor\/assets\/",
+      "assets":"https:\/\/salon-groom.appuse.ru\/",
+      "ajaxurl":"",
+      "uploadUrl":""
+   },
+   "nonces":{
+      "floatingButtonsClickTracking":"07b3167d25"
+   },
+   "swiperClass":"swiper",
+   "settings":{
+      "page":[
+         
+      ],
+      "editorPreferences":[
+         
+      ]
+   },
+   "kit":{
+      "active_breakpoints":[
+         "viewport_mobile",
+         "viewport_tablet"
+      ],
+      "global_image_lightbox":"yes",
+      "lightbox_enable_counter":"yes",
+      "lightbox_enable_fullscreen":"yes",
+      "lightbox_enable_zoom":"yes",
+      "lightbox_enable_share":"yes",
+      "lightbox_title_src":"title",
+      "lightbox_description_src":"description",
+      "body_background_background":"classic"
+   },
+   "post":{
+      "id":132,
+      "title":"Karina%20Co.%20Dog%20Grooming",
+      "excerpt":"",
+      "featuredImage":false
+   },
+   "user":{
+      "roles":[
+         "administrator"
+      ]
+   }
+}
+;
 /* ]]> */
 </script>
+
 <script type="text/javascript" src="js/elementor/frontend.min.js?ver=3.26.4" id="elementor-frontend-js"></script>
+
 <script type="text/javascript" id="twbb-pro-features-frontend-script-js-extra">
 /* <![CDATA[ */
 var ElementorTenwebFrontendConfig = {"ajaxurl":"https:\/\/top-tomcat.10web.me\/wp-admin\/admin-ajax.php","nonce":"a3cb61bcf2","urls":{"assets":"https:\/\/top-tomcat.10web.me\/wp-content\/plugins\/tenweb-builder\/pro-features\/assets\/"}};

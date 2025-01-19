@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Karina Co. Dog Grooming</title>
+    <title>Груминг салон на Новослободской</title>
     <!-- Google Tag Manager -->
     <script class="pointerier">
       (function (w, d, s, l, i) {
@@ -448,7 +448,7 @@
 
     <link rel="canonical" href="https://salon-groom.appuse.ru/" />
     <link rel="shortlink" href="https://salon-groom.appuse.me/" />
-	
+
 
     <!-- <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://top-tomcat.10web.me/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftop-tomcat.10web.me%2F" />
 
@@ -492,10 +492,146 @@
         margin-top: -4rem;
       }
     </style>
+
+<style>
+    /* Стили для модального окна */
+    .modal {
+      display: none; /* Скрыто по умолчанию */
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
   </head>
   <body
     class="home page-template-default page page-id-132 logged-in admin-bar no-customize-support no-sidebar elementor-default elementor-kit-159 elementor-page elementor-page-132 mt--4"
   >
+
+  <!-- Модальное окно -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Запись на стрижку</h2>
+      <form id="bookingForm">
+        <label for="ownerName">Имя:</label>
+        <input type="text" id="ownerName" name="ownerName" required><br><br>
+        <label for="phone">Телефон:</label>
+        <input type="text" id="phone" name="phone" required><br><br>
+        <label for="date">Дата:</label>
+        <input type="date" id="date" name="date" required><br><br>
+        <input type="button" id="submit" value="Записаться">
+        <input type="button" id="cancel" value="Отмена">
+      </form>
+      <p id="errorMessage" style="display: none; color: red;">Пожалуйста, заполните все поля.</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Получаем элементы
+      var modal = document.getElementById("bookingModal");
+      var btn = document.getElementById("book-now");
+      var span = document.getElementsByClassName("close")[0];
+      var submitButton = document.getElementById("submit");
+      var cancelButton = document.getElementById("cancel");
+      var errorMessage = document.getElementById("errorMessage");
+
+      // Открываем модальное окно при клике на кнопку
+      if (btn) {
+        btn.onclick = function(event) {
+          event.preventDefault(); // Предотвращаем переход по ссылке
+          modal.style.display = "block";
+        }
+      }
+
+      // Закрываем модальное окно при клике на крестик
+      if (span) {
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+      }
+
+      // Закрываем модальное окно при клике вне его
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+      // Обработчик клика по кнопке "Записаться"
+      submitButton.onclick = function() {
+        // Получаем значения из формы
+        var ownerName = document.getElementById("ownerName").value;
+        var phone = document.getElementById("phone").value;
+        var date = document.getElementById("date").value;
+
+        // Проверяем, что все поля заполнены
+        if (ownerName && phone && date) {
+          // Здесь можно добавить код для отправки данных на сервер или другой логики
+
+          // Отправляем данные на сервер
+          fetch('http://appuse.ru:8089/book', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+              ownerName: ownerName,
+              phone: phone,
+              date: date
+            })
+          })
+          .then(response => response.text())
+          .then(data => {
+            console.log(data);
+            modal.style.display = "none"; // Закрываем модальное окно
+            errorMessage.style.display = "none"; // Скрываем сообщение об ошибке
+          })
+
+          console.log("Запись успешно отправлена!\nИмя: " + ownerName + "\nТелефон: " + phone + "\nДата: " + date);
+          modal.style.display = "none"; // Закрываем модальное окно
+          errorMessage.style.display = "none"; // Скрываем сообщение об ошибке
+        } else {
+          errorMessage.style.display = "block"; // Показываем сообщение об ошибке
+        }
+      };
+
+      // Обработчик клика по кнопке "Отмена"
+      cancelButton.onclick = function() {
+        modal.style.display = "none"; // Закрываем модальное окно
+        errorMessage.style.display = "none"; // Скрываем сообщение об ошибке
+      };
+    });
+  </script>
+  
     <script type="text/javascript">
       /* <![CDATA[ */
 
@@ -629,7 +765,7 @@
                     d="M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 804 846 783 846 767 842 750 829 737L588 500 833 258C863 229 863 200 833 171 804 137 775 137 742 167Z"
                   ></path>
                 </svg>
-                <span class="elementor-screen-only">Menu</span>
+                <span class="elementor-screen-only">Меню</span>
               </div>
               <nav class="twbb-nav-menu--dropdown twbb-nav-menu__container">
                 <ul
@@ -642,7 +778,7 @@
                     <a
                       href="https://salon-groom.appuse.ru/contacts/"
                       class="twbb-item"
-                      >Contacts</a
+                      >Контакты</a
                     >
                   </li>
                   <li
@@ -651,7 +787,7 @@
                     <a
                       href="https://salon-groom.appuse.ru/services/"
                       class="twbb-item"
-                      >Services</a
+                      >Услуги</a
                     >
                   </li>
                   <li
@@ -660,7 +796,7 @@
                     <a
                       href="https://salon-groom.appuse.ru/gallery/"
                       class="twbb-item"
-                      >Gallery</a
+                      >Галерея</a
                     >
                   </li>
                   <li
@@ -669,7 +805,7 @@
                     <a
                       href="https://salon-groom.appuse.ru/contact-us/"
                       class="twbb-item"
-                      >Contact Us</a
+                      >Связаться с нами</a
                     >
                   </li>
                 </ul>
@@ -695,14 +831,12 @@
             >
               <div class="elementor-widget-container">
                 <div class="elementor-button-wrapper">
-                  <a
-                    class="elementor-button elementor-button-link elementor-size-sm"
-                    href="https://top-tomcat.10web.me/contact-us//"
-                  >
-                    <span class="elementor-button-content-wrapper">
-                      <span class="elementor-button-text">Book Now</span>
-                    </span>
-                  </a>
+                  <!-- Кнопка для открытия модального окна -->
+  <button id="book-now" class="elementor-button elementor-button-link elementor-size-sm">
+    <span class="elementor-button-content-wrapper">
+      <span class="elementor-button-text">Записаться</span>
+    </span>
+  </button>
                 </div>
               </div>
             </div>

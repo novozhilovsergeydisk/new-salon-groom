@@ -546,7 +546,12 @@
     /* ]]> */
   </script>
 
-  <div data-elementor-type="twbb_header" data-elementor-id="155" class="elementor elementor-155">
+
+
+
+
+
+<div data-elementor-type="twbb_header" data-elementor-id="155" class="elementor elementor-155">
     <div class="elementor-element elementor-element-yx3it7rc twbb_section e-con-boxed e-flex e-con e-parent"
       data-id="yx3it7rc" data-element_type="container" id="header"
       data-settings='{"tenweb_sticky_effects_offset":100,"position":"absolute","background_background":"classic","tenweb_sticky":"top","tenweb_sticky_on":["desktop","tablet","mobile"],"tenweb_sticky_offset":0}'>
@@ -670,6 +675,7 @@
   </div>
 
   <div data-elementor-type="wp-page" data-elementor-id="132" class="elementor elementor-132">
+
     <section
       class="elementor-section elementor-top-section elementor-element elementor-element-7f979378 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default"
       data-id="7f979378" data-element_type="section" data-settings='{"stretch_section":"section-stretched"}'>
@@ -1553,151 +1559,19 @@
     </div>
   </div>
 
-  <script type="text/template" id="twbb-sg-messages">
-      <div class="twbb-sg-messages">
-          <div class="twbb-sg-add-section twbb-sg-not-in-process-generation__one_button">
-              <span class="twbb-sg-just-add-button">
-                  To add, just click it!            </span>
-          </div>
-          <div class="twbb-sg-add-section twbb-sg-not-in-process-generation__two_buttons">
-              <div class="twbb-sg-add-with-generated-content">
-                  <span class="twbb-sg-add-section-button twbb-sg-add-with-generated-content__button">
-                      Add with AI Content                </span>
-              </div>
-              <div class="twbb-sg-add-with-dummy-content">
-                  <span class="twbb-sg-add-section-button twbb-sg-add-with-dummy-content__button">
-                      Add as Previewed                </span>
-              </div>
-          </div>
 
-          <div class="twbb-sg-process-generation">
-              <span class="in-process-generation">
-                  Another generation in progress. <br> Please wait for completion.            </span>
-          </div>
 
-          <div class="twbb-sg-loading">
-              <div class="twbb-sg-loading-spinner"></div>
-              <span>Generating text &amp; images</span>
-          </div>
-      </div>
-    </script>
 
-  <script type="text/template" id="twbb-sg-overlay">
-      <div class="twbb-sg-overlay"></div>
-    </script>
 
-  <script type="text/javascript">
-    const lazyloadRunObserver = () => {
-      const lazyloadBackgrounds = document.querySelectorAll(
-        `.e-con.e-parent:not(.e-lazyloaded)`
-      );
-      const lazyloadBackgroundObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              let lazyloadBackground = entry.target;
-              if (lazyloadBackground) {
-                lazyloadBackground.classList.add("e-lazyloaded");
-              }
-              lazyloadBackgroundObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { rootMargin: "200px 0px 200px 0px" }
-      );
-      lazyloadBackgrounds.forEach((lazyloadBackground) => {
-        lazyloadBackgroundObserver.observe(lazyloadBackground);
-      });
-    };
-    const events = ["DOMContentLoaded", "elementor/lazyload/observe"];
-    events.forEach((event) => {
-      document.addEventListener(event, lazyloadRunObserver);
-    });
-  </script>
-
-  <script type="text/template" id="tmpl-elementor-templates-modal__header">
-      <div class="elementor-templates-modal__header__logo-area"></div>
-      <div class="elementor-templates-modal__header__menu-area"></div>
-      <div class="elementor-templates-modal__header__items-area">
-      	<# if ( closeType ) { #>
-      		<div class="elementor-templates-modal__header__close elementor-templates-modal__header__close--{{{ closeType }}} elementor-templates-modal__header__item">
-      			<# if ( 'skip' === closeType ) { #>
-      			<span>Skip</span>
-      			<# } #>
-      			<i class="eicon-close"
-      			   aria-hidden="true"
-      			   title="{{{ $e.components?.get( 'document/elements' )?.utils?.getTitleForLibraryClose() }}}"></i>
-      			<span class="elementor-screen-only">{{{ $e.components?.get( 'document/elements' )?.utils?.getTitleForLibraryClose() }}}</span>
-      		</div>
-      	<# } #>
-      	<div id="elementor-template-library-header-tools"></div>
-      </div>
-    </script>
-
-  <script type="text/template" id="tmpl-elementor-templates-modal__header__logo">
-      <span class="elementor-templates-modal__header__logo__icon-wrapper e-logo-wrapper">
-      	<i class="eicon-elementor"></i>
-      </span>
-      <span class="elementor-templates-modal__header__logo__title">{{{ title }}}</span>
-    </script>
-
-  <script type="text/template" id="tmpl-elementor-finder">
-      <div id="elementor-finder__search">
-      	<i class="eicon-search" aria-hidden="true"></i>
-      	<input id="elementor-finder__search__input" placeholder="Type to find anything in Elementor" autocomplete="off">
-      </div>
-      <div id="elementor-finder__content"></div>
-    </script>
-
-  <script type="text/template" id="tmpl-elementor-finder-results-container">
-      <div id="elementor-finder__no-results">No Results Found</div>
-      <div id="elementor-finder__results"></div>
-    </script>
-
-  <script type="text/template" id="tmpl-elementor-finder__results__category">
-      <div class="elementor-finder__results__category__title">{{{ title }}}</div>
-      <div class="elementor-finder__results__category__items"></div>
-    </script>
-
-  <script type="text/template" id="tmpl-elementor-finder__results__item">
-      <!-- <a href="{{ url }}" class="elementor-finder__results__item__link">
-      	<div class="elementor-finder__results__item__icon">
-      		<i class="eicon-{{{ icon }}}" aria-hidden="true"></i>
-      	</div>
-      	<div class="elementor-finder__results__item__title">{{{ title }}}</div>
-      	<# if ( description ) { #>
-      		<div class="elementor-finder__results__item__description">- {{{ description }}}</div>
-      	<# } #>
-
-      	<# if ( lock ) { #>
-      	<div class="elementor-finder__results__item__badge"><i class="{{{ lock.badge.icon }}}"></i>{{ lock.badge.text }}</div>
-      	<# } #>
-      </a>
-      <# if ( actions.length ) { #>
-      	<div class="elementor-finder__results__item__actions">
-      	<# jQuery.each( actions, function() { #>
-      		<a class="elementor-finder__results__item__action elementor-finder__results__item__action--{{ this.name }}" href="{{ this.url }}" target="_blank">
-      			<i class="eicon-{{{ this.icon }}}"></i>
-      		</a>
-      	<# } ); #>
-      	</div>
-      <# } #> -->
-    </script>
-
-  <!-- Google Tag Manager (noscript) -->
-  <!-- <noscript><iframe class="pointerier" src="https://metrics.10web.site/ns.html?id=GTM-P7NJPR5C"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
-  <!-- End Google Tag Manager (noscript) -->
+  <div>
+    <p>test</p>
+  </div>
 
 
 
 
 
 
-
-
-
-  
   <style>
     .twbb-tour-overlay-preview-part {
       position: fixed;

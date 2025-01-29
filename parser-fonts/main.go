@@ -12,7 +12,7 @@ import (
 
 func main() {
 	// URL файла CSS
-	cssURL := "https://top-tomcat.10web.me/wp-includes/css/dashicons.min.css"
+	cssURL := "https://10web-site.ai/124/wp-content/plugins/ai-builder-demo-plugin-master/assets/css/fonts.css"
 
 	// Создаем папку fonts
 	if err := os.MkdirAll("fonts", os.ModePerm); err != nil {

@@ -466,20 +466,54 @@
         var btn = document.getElementById("book-now");
         var btn_modal_show = document.getElementById("modal-show");
 
-        console.log({btn_modal_show})
-
         var span = document.getElementsByClassName("close")[0];
         var submitButton = document.getElementById("submit");
         var cancelButton = document.getElementById("cancel");
         var errorMessage = document.getElementById("errorMessage");
 
-        // Открываем модальное окно при клике на кнопку
+        // Функция открытия модального окна
+        function openModal(event) {
+            event.preventDefault();
+            modal.style.display = "block";
+        }
+
+        // Обработчики клика для обеих кнопок
         if (btn) {
-            btn.onclick = function (event) {
-                event.preventDefault(); // Предотвращаем переход по ссылке
-                modal.style.display = "block";
+            btn.onclick = openModal;
+        }
+        if (btn_modal_show) {
+            btn_modal_show.onclick = openModal;
+        }
+
+        // Отслеживание видимости кнопки modal-show
+        function isElementInViewport(el) {
+            if (!el) return false;
+            const rect = el.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            // Элемент считается видимым, если его верхняя часть видна
+            return rect.top >= 0 && rect.top <= windowHeight;
+        }
+
+        // Обработчик прокрутки
+        function handleScroll() {
+            if (!btn_modal_show || !btn) return;
+            
+            // Получаем позицию кнопки modal-show
+            const rect = btn_modal_show.getBoundingClientRect();
+            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+            
+            // Если кнопка modal-show ушла за пределы экрана вверх
+            if (rect.bottom < 0) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
             }
         }
+
+        // Добавляем обработчик события прокрутки
+        window.addEventListener('scroll', handleScroll);
+        // Вызываем обработчик при загрузке страницы
+        handleScroll();
 
         if (btn_modal_show) {
             btn_modal_show.onclick = function (event) {
@@ -683,8 +717,8 @@
                         data-id="m6oevxr4" data-element_type="widget" data-widget_type="button.default">
                     <div class="elementor-widget-container">
                         <div class="elementor-button-wrapper">
-                            <!-- Кнопка для открытия модального окна -->
-                            <button id="book-now" class="elementor-button elementor-button-link elementor-size-sm">
+                            <!-- Кнопка для открытия модального окна в меню -->
+                            <button id="book-now" class="elementor-button elementor-button-link elementor-size-sm" style="display: none;">
                                 <span class="elementor-button-content-wrapper">
                                   <span class="elementor-button-text">Записаться</span>
                                 </span>
@@ -717,13 +751,13 @@
             class="elementor-section elementor-top-section elementor-element elementor-element-7f979378 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default"
             data-id="7f979378" data-element_type="section" data-settings='{"stretch_section":"section-stretched"}'>
 
-        <div class="elementor-container elementor-column-gap-no">
-            <div
+        <div id="section-container" class="elementor-container elementor-column-gap-no">
+            <div id="main-column"
                     class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-74a2142f"
                     data-id="74a2142f" data-element_type="column">
 
-                <div class="elementor-widget-wrap elementor-element-populated">
-                    <div class="elementor-element elementor-element-79286357 elementor-widget elementor-widget-twbbpost-content"
+                <div id="content-wrapper" class="elementor-widget-wrap elementor-element-populated">
+                    <div id="main-content" class="elementor-element elementor-element-79286357 elementor-widget elementor-widget-twbbpost-content"
                          data-id="79286357" data-element_type="widget" data-widget_type="twbbpost-content.default">
                         <div class="elementor-widget-container">
 

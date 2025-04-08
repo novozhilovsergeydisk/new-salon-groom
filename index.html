@@ -21,190 +21,9 @@
 
     <link rel="dns-prefetch" href="//fonts.googleapis.com"/>
 
-    <!-- <link rel="alternate" type="application/rss+xml" title="Karina Co. Dog Grooming &raquo; Feed" href="https://top-tomcat.10web.me/feed/" />
-
-  <link rel="alternate" type="application/rss+xml" title="Karina Co. Dog Grooming &raquo; Comments Feed" href="https://top-tomcat.10web.me/comments/feed/" /> -->
-
-    <script type="text/javascript">
-        /* <![CDATA[ */
-        window._wpemojiSettings = {
-            baseUrl: "https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/",
-            ext: ".png",
-            svgUrl: "https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/",
-            svgExt: ".svg",
-            source: {
-                concatemoji:
-                    "https:\/\/top-tomcat.10web.me\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.7.1",
-            },
-        };
-        /*! This file is auto-generated */
-        !(function (i, n) {
-            var o, s, e;
-
-            function c(e) {
-                try {
-                    var t = {supportTests: e, timestamp: new Date().valueOf()};
-                    sessionStorage.setItem(o, JSON.stringify(t));
-                } catch (e) {
-                }
-            }
-
-            function p(e, t, n) {
-                e.clearRect(0, 0, e.canvas.width, e.canvas.height),
-                    e.fillText(t, 0, 0);
-                var t = new Uint32Array(
-                    e.getImageData(0, 0, e.canvas.width, e.canvas.height).data
-                    ),
-                    r =
-                        (e.clearRect(0, 0, e.canvas.width, e.canvas.height),
-                            e.fillText(n, 0, 0),
-                            new Uint32Array(
-                                e.getImageData(0, 0, e.canvas.width, e.canvas.height).data
-                            ));
-                return t.every(function (e, t) {
-                    return e === r[t];
-                });
-            }
-
-            function u(e, t, n) {
-                switch (t) {
-                    case "flag":
-                        return n(
-                            e,
-                            "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f",
-                            "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f"
-                        )
-                            ? !1
-                            : !n(
-                            e,
-                            "\ud83c\uddfa\ud83c\uddf3",
-                            "\ud83c\uddfa\u200b\ud83c\uddf3"
-                            ) &&
-                            !n(
-                                e,
-                                "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
-                                "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"
-                            );
-                    case "emoji":
-                        return !n(
-                            e,
-                            "\ud83d\udc26\u200d\u2b1b",
-                            "\ud83d\udc26\u200b\u2b1b"
-                        );
-                }
-                return !1;
-            }
-
-            function f(e, t, n) {
-                var r =
-                        "undefined" != typeof WorkerGlobalScope &&
-                        self instanceof WorkerGlobalScope
-                            ? new OffscreenCanvas(300, 150)
-                            : i.createElement("canvas"),
-                    a = r.getContext("2d", {willReadFrequently: !0}),
-                    o = ((a.textBaseline = "top"), (a.font = "600 32px Arial"), {});
-                return (
-                    e.forEach(function (e) {
-                        o[e] = t(a, e, n);
-                    }),
-                        o
-                );
-            }
-
-            function t(e) {
-                var t = i.createElement("script");
-                (t.src = e), (t.defer = !0), i.head.appendChild(t);
-            }
-
-            "undefined" != typeof Promise &&
-            ((o = "wpEmojiSettingsSupports"),
-                (s = ["flag", "emoji"]),
-                (n.supports = {everything: !0, everythingExceptFlag: !0}),
-                (e = new Promise(function (e) {
-                    i.addEventListener("DOMContentLoaded", e, {once: !0});
-                })),
-                new Promise(function (t) {
-                    var n = (function () {
-                        try {
-                            var e = JSON.parse(sessionStorage.getItem(o));
-                            if (
-                                "object" == typeof e &&
-                                "number" == typeof e.timestamp &&
-                                new Date().valueOf() < e.timestamp + 604800 &&
-                                "object" == typeof e.supportTests
-                            )
-                                return e.supportTests;
-                        } catch (e) {
-                        }
-                        return null;
-                    })();
-                    if (!n) {
-                        if (
-                            "undefined" != typeof Worker &&
-                            "undefined" != typeof OffscreenCanvas &&
-                            "undefined" != typeof URL &&
-                            URL.createObjectURL &&
-                            "undefined" != typeof Blob
-                        )
-                            try {
-                                var e =
-                                    "postMessage(" +
-                                    f.toString() +
-                                    "(" +
-                                    [JSON.stringify(s), u.toString(), p.toString()].join(
-                                        ","
-                                    ) +
-                                    "));",
-                                    r = new Blob([e], {type: "text/javascript"}),
-                                    a = new Worker(URL.createObjectURL(r), {
-                                        name: "wpTestEmojiSupports",
-                                    });
-                                return void (a.onmessage = function (e) {
-                                    c((n = e.data)), a.terminate(), t(n);
-                                });
-                            } catch (e) {
-                            }
-                        c((n = f(s, u, p)));
-                    }
-                    t(n);
-                })
-                    .then(function (e) {
-                        for (var t in e)
-                            (n.supports[t] = e[t]),
-                                (n.supports.everything =
-                                    n.supports.everything && n.supports[t]),
-                            "flag" !== t &&
-                            (n.supports.everythingExceptFlag =
-                                n.supports.everythingExceptFlag && n.supports[t]);
-                        (n.supports.everythingExceptFlag =
-                            n.supports.everythingExceptFlag && !n.supports.flag),
-                            (n.DOMReady = !1),
-                            (n.readyCallback = function () {
-                                n.DOMReady = !0;
-                            });
-                    })
-                    .then(function () {
-                        return e;
-                    })
-                    .then(function () {
-                        var e;
-                        n.supports.everything ||
-                        (n.readyCallback(),
-                            (e = n.source || {}).concatemoji
-                                ? t(e.concatemoji)
-                                : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji)));
-                    }));
-        })((window, document), window._wpemojiSettings);
-        /* ]]> */
-    </script>
-
-    <!-- https://top-tomcat.10web.me/wp-includes/fonts/dashicons.eot
-       https://top-tomcat.10web.me/wp-includes/fonts/dashicons.ttf
-  -->
+    <link rel="alternate" type="application/rss+xml" title="Karina Co. Dog Grooming &raquo; Comments Feed" href="https://top-tomcat.10web.me/comments/feed/" /> -->
 
     <link rel="stylesheet" id="dashicons-css" href="css/dashicons.min.css?ver=6.7.1" type="text/css" media="all"/>
-
-    <!-- <link rel='stylesheet' id='admin-bar-css' href='https://top-tomcat.10web.me/wp-includes/css/admin-bar.min.css?ver=6.7.1' type='text/css' media='all' /> -->
 
     <style id="admin-bar-inline-css" type="text/css">
         @media screen {
@@ -286,8 +105,6 @@
     <link rel="stylesheet" id="tenweb-website-builder-theme-style-css" href="css/styles.min.css?ver=2.1.12"
           type="text/css" media="all"/>
 
-    <!-- <link rel='stylesheet' id='elementor-wp-admin-bar-css' href='https://top-tomcat.10web.me/wp-content/plugins/elementor/assets/css/admin-bar.min.css?ver=3.26.4' type='text/css' media='all' /> -->
-
     <link rel="stylesheet" id="elementor-post-159-css" href="css/post-159.css?ver=1736719716" type="text/css"
           media="all"/>
 
@@ -315,8 +132,6 @@
         /* ]]> */
     </script>
 
-    <!-- <script type="text/javascript" src="js/helper-script.js?ver=1.26.30" id="twbb-editor-helper-script-js"></script> -->
-
     <script type="text/javascript" id="tenweb_scripts_cache-js-extra">
         /* <![CDATA[ */
         // var tenweb = {"ajaxurl":"https:\/\/top-tomcat.10web.me\/wp-admin\/admin-ajax.php"};
@@ -341,32 +156,12 @@
         /* ]]> */
     </script>
 
-    <!-- <script type="text/javascript"
-      src="https://top-tomcat.10web.me/wp-content/plugins/tenweb-speed-optimizer/assets/js/two_admin_bar.js?ver=2.30.9"
-      id="two_admin_bar_js-js">
-    </script> -->
-
     <script type="text/javascript" src="js/scripts.min.js?ver=2.1.12"
             id="tenweb-website-builder-theme-script-js"></script>
-
-    <!-- <link rel="https://api.w.org/" href="https://top-tomcat.10web.me/wp-json/" /> -->
-
-    <!-- <link rel="alternate" title="JSON" type="application/json"
-      href="https://top-tomcat.10web.me/wp-json/wp/v2/pages/132" /> -->
-
-    <!-- <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://top-tomcat.10web.me/xmlrpc.php?rsd" /> -->
 
     <meta name="generator" content="WordPress 6.7.1"/>
 
     <link rel="canonical" href="https://salon-groom.appuse.ru/"/>
-    <link rel="shortlink" href="https://salon-groom.appuse.me/"/>
-
-    <!-- <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://top-tomcat.10web.me/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftop-tomcat.10web.me%2F" />
-
-  <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://top-tomcat.10web.me/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftop-tomcat.10web.me%2F&#038;format=xml" /> -->
-
-    <!-- <meta name="generator"
-      content="Elementor 3.26.4; features: e_font_icon_svg; settings: css_print_method-external, google_font-enabled, font_display-swap" /> -->
 
     <style>
         .e-con.e-parent:nth-of-type(n + 4):not(.e-lazyloaded):not(.e-no-lazyload),
@@ -459,7 +254,7 @@
 </div>
 
 <!-- Обработка click on button из модального окна -->
-<script>
+<script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
         // Получаем элементы
         var modal = document.getElementById("bookingModal");
@@ -622,12 +417,12 @@
         <div id="header-inner" class="e-con-inner">
             <div id="logo" class="elementor-element elementor-element-2subg3gz elementor-widget elementor-widget-image"
                  data-id="2subg3gz" data-element_type="widget" data-widget_type="image.default">
-                <div class="elementor-widget-container">
-                    <a href="/">
-                        <img src="https://top-tomcat.10web.me/wp-content/uploads/2025/01/logo_OFJJokv7.webp"
-                             class="attachment-full size-full wp-image-79" alt=""/>
-                    </a>
-                </div>
+<!--                <div class="elementor-widget-container">-->
+<!--                    <a href="/">-->
+<!--                        <img src="https://top-tomcat.10web.me/wp-content/uploads/2025/01/logo_OFJJokv7.webp"-->
+<!--                             class="attachment-full size-full wp-image-79" alt=""/>-->
+<!--                    </a>-->
+<!--                </div>-->
             </div>
 
             <div id="menu"
@@ -640,22 +435,22 @@
                         <ul id="menu-1-4tlab13a" class="twbb-nav-menu twbb-menu_term_id-3">
                             <li
                                     class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-143">
-                                <a href="https://salon-groom.appuse.ru/contacts/" class="twbb-item">Contacts</a>
+                                <a href="/" class="twbb-item">Главная</a>
                             </li>
 
                             <li
                                     class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-144">
-                                <a href="https://salon-groom.appuse.ru/services/" class="twbb-item">Services</a>
-                            </li>
-
-                            <li
-                                    class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-145">
-                                <a href="https://salon-groom.appuse.ru/gallery/" class="twbb-item">Gallery</a>
+                                <a href="/services.html" class="twbb-item">Услуги</a>
                             </li>
 
                             <li
                                     class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-146">
-                                <a href="https://salon-groom.appuse.ru/price.html" class="twbb-item">Прайс</a>
+                                <a href="/price.html" class="twbb-item">Прайс</a>
+                            </li>
+
+                            <li
+                                    class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-145">
+                                <a href="/contacts.html" class="twbb-item">Контакты</a>
                             </li>
                         </ul>
                     </nav>
@@ -817,7 +612,7 @@
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-button-wrapper">
                                                     <a class="elementor-button elementor-button-link elementor-size-sm"
-                                                       href="https://top-tomcat.10web.me/contact-us//">
+                                                       href="#">
                                 <span class="elementor-button-content-wrapper">
                                   <span class="elementor-button-text">Contact Us</span>
                                 </span>
@@ -960,7 +755,7 @@
                                                             <div class="twbb_cta-buttons">
                                                                 <div
                                                                         class="twbb_cta-button-item twbb_cta-button-item__two twbb_cta-button-enable-yes">
-                                                                    <a href="https://top-tomcat.10web.me/full-grooming-package//"
+                                                                    <a href="#"
                                                                        class="elementor-button twbb_cta-button elementor-size- twbb_cta-button__two">
                                                                         Узнать больше
                                                                     </a>
@@ -1002,7 +797,7 @@
                                                             <div class="twbb_cta-buttons">
                                                                 <div
                                                                         class="twbb_cta-button-item twbb_cta-button-item__two twbb_cta-button-enable-yes">
-                                                                    <a href="https://top-tomcat.10web.me/bath-and-brush//"
+                                                                    <a href="#"
                                                                        class="elementor-button twbb_cta-button elementor-size- twbb_cta-button__two">
                                                                         Узнать больше
                                                                     </a>
@@ -1044,7 +839,7 @@
                                                             <div class="twbb_cta-buttons">
                                                                 <div
                                                                         class="twbb_cta-button-item twbb_cta-button-item__two twbb_cta-button-enable-yes">
-                                                                    <a href="https://top-tomcat.10web.me/gallery//"
+                                                                    <a href="#"
                                                                        class="elementor-button twbb_cta-button elementor-size- twbb_cta-button__two">
                                                                         Узнать больше
                                                                     </a>
@@ -1176,7 +971,7 @@
                                                 <div class="elementor-widget-container">
                                                     <div class="elementor-button-wrapper">
                                                         <a class="elementor-button elementor-button-link elementor-size-sm"
-                                                           href="https://top-tomcat.10web.me/full-grooming-package//">
+                                                           href="#">
                                   <span class="elementor-button-content-wrapper">
                                     <span class="elementor-button-text">Выбрать полный пакет</span>
                                   </span>
@@ -1274,7 +1069,7 @@
                                                 <div class="elementor-widget-container">
                                                     <div class="elementor-button-wrapper">
                                                         <a class="elementor-button elementor-button-link elementor-size-sm"
-                                                           href="https://top-tomcat.10web.me/bath-and-brush//">
+                                                           href="#">
                                   <span class="elementor-button-content-wrapper">
                                     <span class="elementor-button-text">Выбрать ванну и чистку</span>
                                   </span>
@@ -1655,7 +1450,7 @@
                                 </li>
                                 <li
                                         class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-151">
-                                    <a href="https://top-tomcat.10web.me/privacy-policy/" class="twbb-item">Privacy
+                                    <a href="#" class="twbb-item">Privacy
                                         Policy</a>
                                 </li>
                             </ul>
@@ -1668,7 +1463,7 @@
                                 </li>
                                 <li
                                         class="a:1:{i:0;s:0:&quot;&quot;;} menu-item menu-item-type-post_type menu-item-object-page menu-item-151">
-                                    <a href="https://top-tomcat.10web.me/privacy-policy/" class="twbb-item">Privacy
+                                    <a href="#" class="twbb-item">Privacy
                                         Policy</a>
                                 </li>
                             </ul>
